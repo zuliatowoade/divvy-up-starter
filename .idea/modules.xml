@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/billsSplitApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/billsSplitApp.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/divvy-up-test.iml" filepath="$PROJECT_DIR$/.idea/divvy-up-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/billssplitApp/divvy-up-test.BillsSplitApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/billssplitApp/divvy-up-test.BillsSplitApp.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BillsSplitDBApp/divvy-up-test.BillsSplitDBApp.main.iml" filepath="$PROJECT_DIR$/.idea/modules/BillsSplitDBApp/divvy-up-test.BillsSplitDBApp.main.iml" />
     </modules>
   </component>
 </project>
