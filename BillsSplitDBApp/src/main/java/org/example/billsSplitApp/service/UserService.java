@@ -26,13 +26,6 @@ public class UserService {
         }
 
         public User saveUser(User user) {
-//            try {
-//                Blob profilePictureBlob = new SerialBlob(user.getProfilePicture());
-//                user.setProfilePicture(profilePictureBlob.getBytes(1, (int) profilePictureBlob.length()));
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-
             return userRepository.save(user);
         }
 

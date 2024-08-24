@@ -1,12 +1,9 @@
 package org.example.billsSplitApp.controller;
 
 import org.example.billsSplitApp.model.CreateExpenseAllocationRequest;
-import org.example.billsSplitApp.model.Expense;
 import org.example.billsSplitApp.model.ExpensesAllocations;
 import org.example.billsSplitApp.model.Friends;
-import org.example.billsSplitApp.repository.FriendsRepository;
 import org.example.billsSplitApp.service.ExpenseAllocationService;
-import org.example.billsSplitApp.service.ExpenseService;
 import org.example.billsSplitApp.service.FriendsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/expenseAllocation")

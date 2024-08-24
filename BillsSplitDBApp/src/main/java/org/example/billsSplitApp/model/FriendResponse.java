@@ -1,18 +1,15 @@
 package org.example.billsSplitApp.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-
-import java.time.LocalDate;
-import java.util.UUID;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Friends {
+public class FriendResponse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

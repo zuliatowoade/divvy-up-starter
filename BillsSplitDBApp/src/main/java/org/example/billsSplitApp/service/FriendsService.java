@@ -1,16 +1,16 @@
 package org.example.billsSplitApp.service;
 
 
-import org.example.billsSplitApp.model.CreateFriendsRequest;
-import org.example.billsSplitApp.model.Friends;
-import org.example.billsSplitApp.model.User;
+import org.example.billsSplitApp.model.*;
 import org.example.billsSplitApp.repository.FriendsRepository;
 import org.example.billsSplitApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class FriendsService {
@@ -33,6 +33,15 @@ public class FriendsService {
         return friendsRepository.findById(id).orElse(null);
     }
 
+    public List<User> getFriendsByInitiatorName(String username) {
+        var result = friendsRepository.findByInitiatorName(username);
+        List<User> response = new ArrayList<User>();
+        for (Friends friend : result) {
+            response.add(friend.getFriend());
+        }
+        return response;
+    }
+
     public Friends saveUser(Friends friend) {
         return friendsRepository.save(friend);
     }
@@ -49,8 +58,8 @@ public class FriendsService {
             User friend = generateFriend(user);
 
             Friends friendship = new Friends();
-            friendship.setUserId(user.getId());
-            friendship.setDate(request.getDate());
+           // friendship.setUserId(user.getId());
+            //friendship.setDate(request.getDate());
 
             return friendsRepository.save(friendship);
         } else {

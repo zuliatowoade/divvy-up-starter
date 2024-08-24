@@ -17,12 +17,11 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(updatable = false, nullable = false)
     private Long id;
-
+    private String username;
     private String firstName;
     private String lastName;
     private String email;
-
-
-   private String phoneNumber;
+    private String phoneNumber;
 }

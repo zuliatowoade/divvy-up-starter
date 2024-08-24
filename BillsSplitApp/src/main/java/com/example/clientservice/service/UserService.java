@@ -1,27 +1,27 @@
 package com.example.clientservice.service;
 
-import com.example.clientservice.dto.CreateExpenseRequest;
 import com.example.clientservice.dto.CreateExpenseAllocationRequest;
+import com.example.clientservice.dto.CreateExpenseRequest;
+import com.example.clientservice.dto.CreateUserRequest;
 import com.example.clientservice.dto.Expense;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.UUID;
 
 @Service
-public class ExpenseService {
+public class UserService {
 
     private final RestTemplate restTemplate;
 
     @Autowired
-    public ExpenseService(RestTemplate restTemplate) {
+    public UserService(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
-    public void  createExpense(CreateExpenseRequest request) {
+    public void  createUser(CreateUserRequest request) {
         // Generate UUID for the expense
         UUID expenseId = UUID.randomUUID();
 

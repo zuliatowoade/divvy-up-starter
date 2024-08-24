@@ -43,15 +43,15 @@ public class ExpenseController {
         Expense existingExpenseOpt = expenseService.getExpenseById(id);
 
         if (existingExpenseOpt != null) {
-            Expense existingExpense = existingExpenseOpt;
+            Expense newExpense = existingExpenseOpt;
 
             // Update the existing expense's fields with the new values
-            existingExpense.setAmount(expense.getAmount());
-            existingExpense.setDescription(expense.getDescription());
-            existingExpense.setSplitType(expense.getSplitType());
-            existingExpense.setDate(expense.getDate());
+            newExpense.setAmount(existingExpenseOpt.getAmount());
+            newExpense.setDescription(existingExpenseOpt.getDescription());
+            newExpense.setSplitType(existingExpenseOpt.getSplitType());
+            newExpense.setDate(existingExpenseOpt.getDate());
 
-            Expense updatedExpense = expenseService.saveExpense(existingExpense);
+            Expense updatedExpense = expenseService.saveExpense(newExpense);
             return ResponseEntity.ok(updatedExpense);
         } else {
             return ResponseEntity.notFound().build();
