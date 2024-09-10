@@ -1,0 +1,9 @@
+// Root build.gradle
+allprojects {
+	group = 'com.example'
+	version = '1.0'
+
+	repositories {
+		mavenCentral()
+	}
+}
