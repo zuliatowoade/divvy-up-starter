@@ -1,0 +1,135 @@
+/* Container for the entire expense page */
+.expense-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Styling each form group */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Aligning labels to the left */
+.form-group label {
+    margin-bottom: 5px;
+    color: #666;
+    text-align: left; /* Align labels to the left */
+}
+
+/* Search input for friends */
+.friend-search {
+    position: relative;
+    width: 100%;
+}
+
+/* Input styling */
+.friend-search input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* Updated font size */
+}
+
+/* Dropdown menu styling for search results */
+.friend-dropdown {
+    position: absolute;
+    width: 100%;
+    background-color: #ff6b6b;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 10;
+    margin-top: 5px;
+}
+
+/* Individual dropdown items */
+.friend-dropdown li {
+    padding: 8px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Hover effect for dropdown items */
+.friend-dropdown li:hover {
+    background-color: #ff5252;
+}
+
+/* Selected friends styling */
+.selected-friends {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Styling individual selected friends */
+.selected-friend {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Button for removing a selected friend */
+.selected-friend button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+}
+
+/* Input for the amount */
+.selected-friend input[type="number"] {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* Updated font size */
+}
+
+/* General input styling */
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; /* Updated font size */
+}
+
+/* Submit button styling */
+.submit-btn {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+/* Hover effect for submit button */
+.submit-btn:hover {
+    background-color: #ff5252;
+}
