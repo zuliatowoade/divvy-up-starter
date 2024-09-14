@@ -36,3 +36,6 @@ out/
 
 ### VS Code ###
 #.vscode/
+BillsSplitApp/.DS_Store
+BillsSplitDBApp/.DS_Store
+.gradle
