@@ -33,7 +33,7 @@ public class ExpenseService {
         String message = "Expense added: " + savedExpense.getId() + " - " + savedExpense.getDescription();
 
         // Publish the event to Kafka
-        kafkaProducerService.sendMessage(message);
+        kafkaProducerService.sendMessage("expenses-topic", message);
         return savedExpense;
     }
 

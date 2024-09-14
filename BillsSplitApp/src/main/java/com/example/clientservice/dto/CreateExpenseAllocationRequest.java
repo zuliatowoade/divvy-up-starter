@@ -8,4 +8,5 @@ import java.util.UUID;
 public class CreateExpenseAllocationRequest {
     private UUID expenseId;
     private String friendId;
+    private String initatorUser;
 }

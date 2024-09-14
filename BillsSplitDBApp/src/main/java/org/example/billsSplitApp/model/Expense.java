@@ -21,7 +21,7 @@ public class Expense {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private BigDecimal amount;
+    private double amount;
     private String description;
 
     @Enumerated(EnumType.STRING)

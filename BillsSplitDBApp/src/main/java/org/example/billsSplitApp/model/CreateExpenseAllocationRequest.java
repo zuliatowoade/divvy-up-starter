@@ -7,5 +7,6 @@ import java.util.UUID;
 @Data
 public class CreateExpenseAllocationRequest {
     private UUID expenseId;
-    private Long friendId;
+    private String friendId;
+    private String initatorUser;
 }

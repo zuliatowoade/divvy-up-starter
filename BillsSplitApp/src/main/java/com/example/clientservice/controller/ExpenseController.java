@@ -17,7 +17,7 @@ public class ExpenseController {
         this.expenseService = expenseService;
     }
 
-    @PostMapping("/createExpenses")
+    @PostMapping("/addExpense")
     public ResponseEntity<String> createExpense(@RequestBody CreateExpenseRequest request) {
         expenseService.createExpense(request);
         return ResponseEntity.ok("Expense created successfully");

@@ -20,7 +20,7 @@ public class ExpensesAllocations {
     private Long id;
     private String expenseId;
     private Long friend;
-    private Long initiatorId;
+    private String initiatorId;
 }
 
 
