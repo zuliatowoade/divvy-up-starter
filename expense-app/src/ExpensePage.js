@@ -62,11 +62,11 @@ const ExpensePage = () => {
             description,
             amount: generalAmount, // Changed from generalAmount to totalAmount
             splitType,
-            // friends: selectedFriends.map(friend => ({
-            //     ...friend,
-            //     amount: splitType === 'EXACT_AMOUNT' ? amounts[friend.id] || 0 : undefined
-            // }))
-            friends: ["apple", "banana"],
+            friends: selectedFriends.map(friend => ({
+                ...friend,
+                amount: splitType === 'EXACT_AMOUNT' ? amounts[friend.id] || 0 : undefined
+            }))
+            //friends: ["apple", "banana"],
         };
 
         // Send data to the backend

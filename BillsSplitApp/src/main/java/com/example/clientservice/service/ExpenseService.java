@@ -36,10 +36,10 @@ public class ExpenseService {
 
         restTemplate.postForObject(databaseServiceUrl + "expenses", expense, Expense.class);
 
-        for (String friendId : request.getFriends()) {
+        for (var friend : request.getFriends()) {
             CreateExpenseAllocationRequest allocationRequest = new CreateExpenseAllocationRequest();
             allocationRequest.setExpenseId(expenseId);
-            allocationRequest.setFriendId(friendId);
+            allocationRequest.setFriendId(friend.getUsername());
             allocationRequest.setInitatorUser(request.getInitatorUser());
 
             restTemplate.postForObject(databaseServiceUrl + "expenseAllocation", allocationRequest, CreateExpenseAllocationRequest.class);

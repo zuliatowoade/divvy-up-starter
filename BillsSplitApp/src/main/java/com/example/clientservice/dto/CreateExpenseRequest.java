@@ -14,6 +14,6 @@ public class CreateExpenseRequest {
     private String description;
     private String splitType; // "EXACT_AMOUNT" or "SPLIT_EQUALLY"
     private LocalDate date;
-    private List<String> friends;
+    private List<User> friends;
     private String initatorUser;// List of friend IDs
 }
