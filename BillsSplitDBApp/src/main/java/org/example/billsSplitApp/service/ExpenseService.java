@@ -28,9 +28,9 @@ public class ExpenseService {
     }
 
     public Expense saveExpense(Expense expense) {
-        Expense savedExpense = expenseRepository.save(expense);
+        var savedExpense = expenseRepository.save(expense);
 
-        String message = "Expense added: " + savedExpense.getId() + " - " + savedExpense.getDescription();
+        var message = "Expense added: " + savedExpense.getId() + " - " + savedExpense.getDescription();
 
         // Publish the event to Kafka
         kafkaProducerService.sendMessage("expenses-topic", message);

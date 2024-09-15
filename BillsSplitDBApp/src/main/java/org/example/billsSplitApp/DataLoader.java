@@ -4,7 +4,7 @@ package org.example.billsSplitApp;
 //import com.example.databaseservice.repository.UserRepository;
 
 import jakarta.annotation.PostConstruct;
-import lombok.var;
+//import lombok.var;
 import org.example.billsSplitApp.model.Friends;
 import org.example.billsSplitApp.model.User;
 import org.example.billsSplitApp.repository.FriendsRepository;

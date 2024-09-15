@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Expense {
     private UUID id;
-    private double amount;
+    private BigDecimal amount;
     private String description;
     private String splitType;
 

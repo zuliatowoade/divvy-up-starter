@@ -1,7 +1,6 @@
 package org.example.billsSplitApp.service;
 
 
-import lombok.var;
 import org.example.billsSplitApp.model.CreateFriendsRequest;
 import org.example.billsSplitApp.model.Friends;
 import org.example.billsSplitApp.model.User;
@@ -56,8 +55,8 @@ public class FriendsService {
         Optional<User> userOpt = userRepository.findById(request.getUserId());
 
         if (userOpt.isPresent()) {
-            User user = userOpt.get();
-            User friend = generateFriend(user);
+            var user = userOpt.get();
+            var friend = generateFriend(user);
 
             Friends friendship = new Friends();
            // friendship.setUserId(user.getId());

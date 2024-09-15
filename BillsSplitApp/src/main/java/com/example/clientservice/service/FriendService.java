@@ -27,7 +27,7 @@ public class FriendService {
 
     public List<User> findFriendsByInitiatorId(String initiator) {
         // Prepare the request body to send to the database service
-        String databaseServiceUrl = "http://localhost:8090/friends/";// URL of the Database Service Application
+        var databaseServiceUrl = "http://localhost:8090/friends/";// URL of the Database Service Application
 
         return restTemplate.getForObject(databaseServiceUrl + initiator, List.class);
     }

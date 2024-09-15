@@ -29,7 +29,7 @@ public class ExpenseAllocationController {
     @PostMapping
     public ResponseEntity<ExpensesAllocations> createExpenseAllocation(@RequestBody CreateExpenseAllocationRequest request) {
         //Friends friendOpt = friendsService.getFriendsById(request.getFriendId());
-        Friends friendOpt = new Friends();
+        var friendOpt = new Friends();
 
 
         if (friendOpt != null) {

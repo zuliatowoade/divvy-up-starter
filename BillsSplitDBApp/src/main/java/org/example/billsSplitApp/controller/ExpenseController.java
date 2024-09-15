@@ -40,10 +40,10 @@ public class ExpenseController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Expense> updateExpense(@PathVariable Long id, @RequestBody Expense expense) {
-        Expense existingExpenseOpt = expenseService.getExpenseById(id);
+        var existingExpenseOpt = expenseService.getExpenseById(id);
 
         if (existingExpenseOpt != null) {
-            Expense newExpense = existingExpenseOpt;
+            var newExpense = existingExpenseOpt;
 
             // Update the existing expense's fields with the new values
             newExpense.setAmount(existingExpenseOpt.getAmount());
@@ -51,7 +51,7 @@ public class ExpenseController {
             newExpense.setSplitType(existingExpenseOpt.getSplitType());
             newExpense.setDate(existingExpenseOpt.getDate());
 
-            Expense updatedExpense = expenseService.saveExpense(newExpense);
+            var updatedExpense = expenseService.saveExpense(newExpense);
             return ResponseEntity.ok(updatedExpense);
         } else {
             return ResponseEntity.notFound().build();

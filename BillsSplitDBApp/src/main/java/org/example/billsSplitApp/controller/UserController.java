@@ -33,18 +33,17 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
-        User existingUserOpt = userService.getUserById(id);
+        var existingUserOpt = userService.getUserById(id);
 
         if (existingUserOpt != null) {
-            User existingUser;
-            existingUser = existingUserOpt;
+            var existingUser = existingUserOpt;
 
             // Update the existing user's fields with the new values
             existingUser.setFirstName(user.getFirstName());
             existingUser.setLastName(user.getLastName());
             existingUser.setEmail(user.getEmail());
             existingUser.setPhoneNumber(user.getPhoneNumber());
-            User updatedUser = userService.saveUser(existingUser);
+            var updatedUser = userService.saveUser(existingUser);
             return ResponseEntity.ok(updatedUser);
         } else {
             return ResponseEntity.notFound().build();

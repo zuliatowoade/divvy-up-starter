@@ -23,11 +23,11 @@ public class ExpenseService {
 
     public void  createExpense(CreateExpenseRequest request) {
         // Generate UUID for the expense
-        UUID expenseId = UUID.randomUUID();
+        var expenseId = UUID.randomUUID();
 
         // Prepare the request body to send to the database service
-        String databaseServiceUrl = "http://localhost:8090/";// URL of the Database Service Application
-        Expense expense = new Expense();
+        var databaseServiceUrl = "http://localhost:8090/";// URL of the Database Service Application
+        var expense = new Expense();
         expense.setId(expenseId);
         expense.setAmount(request.getAmount());
         expense.setDescription(request.getDescription());

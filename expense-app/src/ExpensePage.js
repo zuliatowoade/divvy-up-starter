@@ -58,9 +58,9 @@ const ExpensePage = () => {
 
         // Prepare the data to send
         const expenseData = {
-            initiatorId: 'cthomson', // Hardcoded initiator ID for now
+            initatorUser: 'cthomson', // Hardcoded initiator ID for now
             description,
-            totalAmount: generalAmount, // Changed from generalAmount to totalAmount
+            amount: generalAmount, // Changed from generalAmount to totalAmount
             splitType,
             // friends: selectedFriends.map(friend => ({
             //     ...friend,
