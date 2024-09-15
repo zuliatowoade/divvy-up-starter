@@ -62,17 +62,18 @@ const ExpensePage = () => {
             description,
             totalAmount: generalAmount, // Changed from generalAmount to totalAmount
             splitType,
-            friends: selectedFriends.map(friend => ({
-                ...friend,
-                amount: splitType === 'EXACT_AMOUNT' ? amounts[friend.id] || 0 : undefined
-            }))
+            // friends: selectedFriends.map(friend => ({
+            //     ...friend,
+            //     amount: splitType === 'EXACT_AMOUNT' ? amounts[friend.id] || 0 : undefined
+            // }))
+            friends: ["apple", "banana"],
         };
 
         // Send data to the backend
         try {
             // Uncomment this block when backend is available
-            // await axios.post('http://localhost:8081/api/addExpense/cthomson', expenseData);
             console.log('Expense data:', expenseData); // For now, log the data to the console
+            await axios.post('http://localhost:8080/api/addExpense', expenseData);
         } catch (error) {
             console.error('Error submitting expense:', error);
         }

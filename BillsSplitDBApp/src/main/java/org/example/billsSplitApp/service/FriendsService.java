@@ -1,7 +1,10 @@
 package org.example.billsSplitApp.service;
 
 
-import org.example.billsSplitApp.model.*;
+import lombok.var;
+import org.example.billsSplitApp.model.CreateFriendsRequest;
+import org.example.billsSplitApp.model.Friends;
+import org.example.billsSplitApp.model.User;
 import org.example.billsSplitApp.repository.FriendsRepository;
 import org.example.billsSplitApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class FriendsService {
