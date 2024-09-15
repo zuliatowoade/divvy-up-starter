@@ -73,7 +73,7 @@ const ExpensePage = () => {
         try {
             // Uncomment this block when backend is available
             console.log('Expense data:', expenseData); // For now, log the data to the console
-            await axios.post('http://localhost:8080/api/addExpense', expenseData);
+            await axios.post('http://localhost:8081/api/addExpense', expenseData);
         } catch (error) {
             console.error('Error submitting expense:', error);
         }
