@@ -1,4 +1,4 @@
-package main;
+package com.example.notification.service;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.messaging.simp.SimpMessagingTemplate;

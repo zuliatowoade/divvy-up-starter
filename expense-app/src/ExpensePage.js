@@ -66,7 +66,6 @@ const ExpensePage = () => {
                 ...friend,
                 amount: splitType === 'EXACT_AMOUNT' ? amounts[friend.id] || 0 : undefined
             }))
-            //friends: ["apple", "banana"],
         };
 
         // Send data to the backend
