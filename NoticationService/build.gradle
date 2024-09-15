@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '3.1.1'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'  // Ensure you're using a compatible Java version
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Spring Boot Web Starter for building web applications
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Spring Kafka for reading from Kafka
+    implementation 'org.springframework.kafka:spring-kafka'
+
+    // WebSocket for sending real-time notifications to the frontend
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+    // Spring Boot Starter Test for unit testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}

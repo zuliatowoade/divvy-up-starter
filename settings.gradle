@@ -1,4 +1,4 @@
 // settings.gradle
 rootProject.name = 'divvy-up-test'
-include 'BillsSplitApp', 'BillsSplitDBApp','ExpenseCalculator'
+include 'BillsSplitApp', 'BillsSplitDBApp', 'NotificationService'
 
