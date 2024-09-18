@@ -13,7 +13,7 @@ public class NotificationService {
         this.messagingTemplate = messagingTemplate;
     }
 
-    // Kafka listener that reads messages from the 'bill-split' topic
+    // Kafka listener that reads messages from the 'expenses-topic' topic
     @KafkaListener(topics = "expenses-topic", groupId = "my-group-id")
     public void consumeBillSplitEvent(String message) {
         // Process the incoming message

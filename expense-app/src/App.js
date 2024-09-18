@@ -4,6 +4,8 @@ import RegistrationPage from './RegistrationPage';
 import ExpensePage from './ExpensePage';
 import SignInPage from './SignInPage';
 import './App.css';
+import NotificationComponent from './NotificationComponent';
+
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -54,6 +56,8 @@ function App() {
                 />
                 <Route path="/expenses" element={<ExpensePage />} />
             </Routes>
+
+            <NotificationComponent />
         </div>
     );
 }
