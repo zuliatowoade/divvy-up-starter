@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import SockJS from 'sockjs-client';
 import { Client } from '@stomp/stompjs';
-//const useState users = {}
-let userAll = [];
-const UserListComponent = () => {
-  const [users, setUsers] = useState([]);
+
+const mockFriends = [
+      { id: 3, username: 'mchen', firstName: 'Mei', lastName: 'Chen', email: 'mei.chen@example.com', phoneNumber: '111-222-3333' },
+      { id: 2, username: 'cjernandez', firstName: 'Carlos', lastName: 'Hernandez', email: 'carlos.hernandez@example.com', phoneNumber: '098-765-4321' },
+      { id: 7, username: 'Lrossi', firstName: 'Luca', lastName: 'Rossi', email: 'luca.rossi@example.com', phoneNumber: '555-666-7777' }
+  ];
+
+const useFriendsList = () => {
+  //const [users, setUsers] = useState([]);
+
+  //mock will be overriding when we recieve data from backend
+  const [users, setUsers] = useState(mockFriends);
 
   useEffect(() => {
     // Create WebSocket connection using SockJS and STOMP
@@ -23,8 +31,7 @@ const UserListComponent = () => {
           console.log(message.body)
           const userList = JSON.parse(message.body); 
           console.log(userList) // Parse the received message
-          userAll = setUsers(userList);
-          console.log("notification" + userAll) // Parse the received message
+          setUsers(userList);
         }
       });
 
@@ -48,6 +55,7 @@ const UserListComponent = () => {
       client.deactivate();
     };
   }, []);
+
+  return users;
 };
-export default UserListComponent;
-export {userAll};
+export default useFriendsList;

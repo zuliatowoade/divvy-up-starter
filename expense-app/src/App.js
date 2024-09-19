@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import RegistrationPage from './RegistrationPage';
 import ExpensePage from './ExpensePage';
 import SignInPage from './SignInPage';
-import UserListComponent from './UserListComponenet';
+import useFriendsList from './useFriendsList';
 import NotificationComponent from './NotificationComponent';
 import './App.css';
 
@@ -58,7 +58,7 @@ function App() {
                 <Route path="/expenses" element={<ExpensePage />} />
             </Routes>
             <NotificationComponent/>
-            <UserListComponent/>
+            <useUserList/>
         </div>
     );
 }
