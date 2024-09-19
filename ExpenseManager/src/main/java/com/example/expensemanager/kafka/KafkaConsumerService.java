@@ -1,4 +1,4 @@
-package org.example.expensedatamanager.kafka;
+package com.example.expensemanager.kafka;
 
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

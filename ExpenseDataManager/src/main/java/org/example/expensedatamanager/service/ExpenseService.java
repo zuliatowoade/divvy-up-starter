@@ -1,6 +1,5 @@
 package org.example.expensedatamanager.service;
 
-import org.example.expensedatamanager.kafka.KafkaProducerService;
 import org.example.expensedatamanager.repository.ExpensesRepository;
 import org.example.expensedatamanager.model.Expense;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +10,10 @@ import java.util.List;
 @Service
 public class ExpenseService {
     private final ExpensesRepository expenseRepository;
-    private final KafkaProducerService kafkaProducerService;
 
     @Autowired
-    public ExpenseService(ExpensesRepository expenseRepository, KafkaProducerService kafkaProducerService) {
+    public ExpenseService(ExpensesRepository expenseRepository) {
         this.expenseRepository = expenseRepository;
-        this.kafkaProducerService = kafkaProducerService;
     }
 
     public List<Expense> getAllExpenses() {
@@ -28,13 +25,7 @@ public class ExpenseService {
     }
 
     public Expense saveExpense(Expense expense) {
-        var savedExpense = expenseRepository.save(expense);
-
-        var message = "Expense added: " + savedExpense.getId() + " - " + savedExpense.getDescription();
-
-        // Publish the event to Kafka
-        kafkaProducerService.sendMessage("expenses-topic", message);
-        return savedExpense;
+        return expenseRepository.save(expense);
     }
 
     public void deleteExpense(Long id) {

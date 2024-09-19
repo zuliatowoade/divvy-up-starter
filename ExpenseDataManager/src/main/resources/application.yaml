@@ -17,20 +17,6 @@ spring:
     console:
       enabled: true
       path: /h2-console
-kafka:
-  bootstrap-servers: localhost:9092
-  consumer:
-    group-id: my-group-id
-    auto-offset-reset: earliest
-    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-  producer:
-    key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: org.apache.kafka.common.serialization.StringSerializer
-  template:
-    default-topic: expenses-topic
-  listener:
-    missing-topics-fatal: false
 logging:
   level:
     org:
