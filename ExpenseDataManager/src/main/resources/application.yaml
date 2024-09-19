@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: ExpenseDataManager
   datasource:
     url: jdbc:h2:mem:testdb;NON_KEYWORDS=user
     driver-class-name: org.h2.Driver

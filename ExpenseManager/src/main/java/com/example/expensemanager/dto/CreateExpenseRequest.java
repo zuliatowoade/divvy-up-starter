@@ -8,7 +8,6 @@ import java.util.List;
 
 @Data
 public class CreateExpenseRequest {
-
     private BigDecimal amount;
     private String description;
     private String splitType; // "EXACT_AMOUNT" or "SPLIT_EQUALLY"

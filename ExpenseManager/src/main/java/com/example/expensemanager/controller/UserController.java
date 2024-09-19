@@ -1,6 +1,6 @@
 package com.example.expensemanager.controller;
 
-import com.example.expensemanager.dto.CreateUserRequest;
+import com.example.expensemanager.dto.User;
 import com.example.expensemanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping("/createUser")
-    public ResponseEntity<String> createUser(@RequestBody CreateUserRequest request) {
+    public ResponseEntity<String> createUser(@RequestBody User request) {
         userService.createUser(request);
         return ResponseEntity.ok("User created successfully");
     }

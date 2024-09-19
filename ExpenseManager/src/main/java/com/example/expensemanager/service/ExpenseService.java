@@ -47,6 +47,7 @@ public class ExpenseService {
             allocationRequest.setExpenseId(expenseId);
             allocationRequest.setFriendId(friend.getUsername());
             allocationRequest.setInitatorUser(request.getInitatorUser());
+            allocationRequest.setAmount(friend.getAmount());
 
             restTemplate.postForObject(databaseServiceUrl + "expenseAllocation", allocationRequest, CreateExpenseAllocationRequest.class);
         }

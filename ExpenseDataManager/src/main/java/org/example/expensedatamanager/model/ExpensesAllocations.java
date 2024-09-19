@@ -17,8 +17,9 @@ public class ExpensesAllocations {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String expenseId;
-    private Long friend;
+    private String friend;
     private String initiatorId;
+    private Long amount;
 }
 
 

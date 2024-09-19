@@ -19,19 +19,18 @@ public class ExpenseController {
     }
 
     @GetMapping
-    public List<Expense> getAllExpenses() {
-        return expenseService.getAllExpenses();
+    public ResponseEntity<List<Expense>> getAllExpenses() {
+        return ResponseEntity.ok(expenseService.getAllExpenses());
     }
 
     @GetMapping("/{id}")
-    public Expense getExpenseById(@PathVariable Long id) {
-        return expenseService.getExpenseById(id);
+    public ResponseEntity<Expense> getExpenseById(@PathVariable Long id) {
+        return ResponseEntity.ok(expenseService.getExpenseById(id));
     }
 
     @PostMapping
-    public Expense createExpense(@RequestBody Expense expense) {
-        return
-                expenseService.saveExpense(expense);
+    public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
+        return ResponseEntity.ok(expenseService.saveExpense(expense));
     }
 
     @DeleteMapping("/{id}")
@@ -42,9 +41,8 @@ public class ExpenseController {
     @PutMapping("/{id}")
     public ResponseEntity<Expense> updateExpense(@PathVariable Long id, @RequestBody Expense expense) {
         var existingExpenseOpt = expenseService.getExpenseById(id);
-
         if (existingExpenseOpt != null) {
-            var newExpense = existingExpenseOpt;
+            var newExpense = new Expense();
 
             // Update the existing expense's fields with the new values
             newExpense.setAmount(existingExpenseOpt.getAmount());

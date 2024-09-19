@@ -17,9 +17,7 @@ public class Expense {
     private BigDecimal amount;
     private String description;
     private String splitType;
-
     private LocalDate date;
-
     public enum SplitType {
         EXACT_AMOUNT,
         SPLIT_EQUALLY

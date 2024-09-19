@@ -28,15 +28,12 @@ public class ExpenseAllocationController {
 
     @PostMapping
     public ResponseEntity<ExpensesAllocations> createExpenseAllocation(@RequestBody CreateExpenseAllocationRequest request) {
-        //Friends friendOpt = friendsService.getFriendsById(request.getFriendId());
-        var friendOpt = new Friends();
-
-
-        if (friendOpt != null) {
+        if (request.getFriendId() != null) {
             ExpensesAllocations allocation = new ExpensesAllocations();
             allocation.setExpenseId(request.getExpenseId().toString());
-            allocation.setFriend(friendOpt.getId());
             allocation.setInitiatorId(request.getInitatorUser());
+            allocation.setAmount(request.getAmount().longValue());
+            allocation.setFriend(request.getFriendId());
 
             ExpensesAllocations savedAllocation = expenseAllocationService.saveExpense(allocation);
             return ResponseEntity.ok(savedAllocation);
