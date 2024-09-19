@@ -3,8 +3,9 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 import RegistrationPage from './RegistrationPage';
 import ExpensePage from './ExpensePage';
 import SignInPage from './SignInPage';
-import './App.css';
+import UserListComponent from './UserListComponenet';
 import NotificationComponent from './NotificationComponent';
+import './App.css';
 
 
 function App() {
@@ -56,8 +57,8 @@ function App() {
                 />
                 <Route path="/expenses" element={<ExpensePage />} />
             </Routes>
-
-            <NotificationComponent />
+            <NotificationComponent/>
+            <UserListComponent/>
         </div>
     );
 }

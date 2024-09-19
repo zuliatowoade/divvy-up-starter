@@ -1,9 +1,11 @@
 package com.example.expensemanager.controller;
 
+import com.example.expensemanager.dto.User;
 import com.example.expensemanager.service.FriendService;
-import org.apache.catalina.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +23,12 @@ public class FriendController {
     @GetMapping("/getAllFriends/{initiatorId}")
     public List<User> createFriend(@PathVariable String initiatorId) {
         return friendService.findFriendsByInitiatorId(initiatorId);
+    }
+
+    @MessageMapping("/getUsers")
+    @SendTo("/topic/users")
+    public List<User> getAllUsers() {
+        // Fetch all users from the database and send them to the frontend
+        return friendService.findFriendsByInitiatorId("cthomson");
     }
 }

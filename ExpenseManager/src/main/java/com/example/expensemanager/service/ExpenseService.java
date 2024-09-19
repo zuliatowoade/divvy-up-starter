@@ -43,7 +43,5 @@ public class ExpenseService {
 
             restTemplate.postForObject(databaseServiceUrl + "expenseAllocation", allocationRequest, CreateExpenseAllocationRequest.class);
         }
-
-
     }
 }

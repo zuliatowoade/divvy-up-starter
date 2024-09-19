@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ExpensePage.css';
+import UserListComponent from './UserListComponenet';
+import { userAll } from './UserListComponenet';
 
-const ExpensePage = () => {
+const ExpensePage = ( ) => {
     // Hardcoded list of friends for now
-    const [friends, setFriends] = useState([
-        { id: 3, username: 'mchen', firstName: 'Mei', lastName: 'Chen', email: 'mei.chen@example.com', phoneNumber: '111-222-3333' },
-        { id: 2, username: 'cjernandez', firstName: 'Carlos', lastName: 'Hernandez', email: 'carlos.hernandez@example.com', phoneNumber: '098-765-4321' },
-        { id: 7, username: 'Lrossi', firstName: 'Luca', lastName: 'Rossi', email: 'luca.rossi@example.com', phoneNumber: '555-666-7777' }
-    ]);
+    const [friends, setFriends] = useState([])
+
+  useEffect(() => {
+    // Set an interval to check if the users list has been updated
+    const interval = setInterval(() => {
+     // if (userAll.length > 0) {
+        setFriends(friends); 
+        console.log("publish")
+        console.log(friends)// Update local state when users list is available
+        clearInterval(interval); // Stop checking once we have the users
+   //   }
+    }, 1000);
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+
+
+    // const [friends, setFriends] = useState([
+    //     { id: 3, username: 'mchen', firstName: 'Mei', lastName: 'Chen', email: 'mei.chen@example.com', phoneNumber: '111-222-3333' },
+    //     { id: 2, username: 'cjernandez', firstName: 'Carlos', lastName: 'Hernandez', email: 'carlos.hernandez@example.com', phoneNumber: '098-765-4321' },
+    //     { id: 7, username: 'Lrossi', firstName: 'Luca', lastName: 'Rossi', email: 'luca.rossi@example.com', phoneNumber: '555-666-7777' }
+    // ]);
 
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedFriends, setSelectedFriends] = useState([]);

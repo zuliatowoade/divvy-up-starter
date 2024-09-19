@@ -1,6 +1,6 @@
 package com.example.expensemanager.service;
 
-import org.apache.catalina.User;
+import com.example.expensemanager.dto.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
