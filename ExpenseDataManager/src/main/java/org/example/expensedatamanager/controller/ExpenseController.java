@@ -30,7 +30,8 @@ public class ExpenseController {
 
     @PostMapping
     public ResponseEntity<Expense> createExpense(@RequestBody Expense expense) {
-        return ResponseEntity.ok(expenseService.saveExpense(expense));
+        throw new UnsupportedOperationException("This method is not yet implemented");
+
     }
 
     @DeleteMapping("/{id}")

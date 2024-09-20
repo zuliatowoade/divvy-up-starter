@@ -16,20 +16,16 @@ public class NotificationService {
     // Kafka listener that reads messages from the 'expenses-topic' topic
     @KafkaListener(topics = "expenses-topic", groupId = "my-group-id")
     public void consumeBillSplitEvent(String message) {
-        // Process the incoming message
-        String notificationMessage = createNotificationMessage(message);
-
-        // Send notification to the frontend
-        notifyFrontend(notificationMessage);
+        throw new UnsupportedOperationException("This method is not yet implemented");
     }
 
     // Helper method to create a notification message based on the Kafka message
     private String createNotificationMessage(String message) {
-        return "Your friend has been notified to pay the bill. Event details: " + message;
+        throw new UnsupportedOperationException("This method is not yet implemented");
     }
 
     // Notify the frontend via WebSocket
     private void notifyFrontend(String notificationMessage) {
-        messagingTemplate.convertAndSend("/topic/notifications", notificationMessage);
+//        messagingTemplate.convertAndSend("/topic/notifications", notificationMessage);
     }
 }

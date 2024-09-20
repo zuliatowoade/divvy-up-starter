@@ -31,6 +31,6 @@ import java.util.List;
 
     @GetMapping("/{username}")
     public List<User> getAllFriends(@PathVariable String username) {
-        return friendsService.getFriendsByInitiatorName(username);
+        throw new UnsupportedOperationException("This method is not yet implemented");
     }
 }

@@ -35,12 +35,9 @@ public class FriendsService {
     }
 
     public List<User> getFriendsByInitiatorName(String username) {
-        var result = friendsRepository.findByInitiatorName(username);
-        List<User> response = new ArrayList<User>();
-        for (Friends friend : result) {
-            response.add(friend.getFriend());
-        }
-        return response;
+
+        throw new UnsupportedOperationException("This method is not yet implemented");
+
     }
 
     public Friends saveUser(Friends friend) {
