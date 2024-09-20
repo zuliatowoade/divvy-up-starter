@@ -168,6 +168,7 @@ const ExpensePage = ( ) => {
                     />
                 </div>
                 <button type="submit" className="submit-btn">Add Expense</button>
+                {/* <LogoutButton/> */}
             </form>
         </div>
     );
