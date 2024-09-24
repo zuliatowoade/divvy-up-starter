@@ -165,7 +165,6 @@ const ExpensePage = () => {
         <button type="submit" className="submit-btn">
           Add Expense
         </button>
-        {/* <LogoutButton/> */}
       </form>
     </div>
   );

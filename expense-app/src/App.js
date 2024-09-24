@@ -6,24 +6,6 @@ import SignInPage from "./SignInPage";
 import NotificationComponent from "./NotificationComponent";
 import "./App.css";
 
-//##################### AUth0 Code / Libraries ###############################
-// import LoginButton from './LoginButton';
-// import { useAuth0 } from '@auth0/auth0-react';
-
-// function App() {
-//     const { user, isAuthenticated, isLoading } = useAuth0();
-
-//     return (
-//       isAuthenticated ? (
-//         <ExpensePage/>
-//       ): <LoginButton/>
-//     );
-//   }
-
-//   export default App;
-
-//######################### End of Auth0 Code ###################################
-
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const navigate = useNavigate();

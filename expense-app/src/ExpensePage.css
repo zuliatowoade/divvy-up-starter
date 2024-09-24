@@ -127,6 +127,7 @@ input, textarea, select {
     cursor: pointer;
     transition: background-color 0.3s;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Hover effect for submit button */
